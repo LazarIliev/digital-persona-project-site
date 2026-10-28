@@ -1,5 +1,4 @@
 import { Server, Landmark, Bot, Activity } from 'lucide-react';
-import profile from '@/assets/lazar_profile.jpg.asset.json';
 
 const About = () => {
   const services = [
@@ -30,7 +29,7 @@ const About = () => {
           <div className="relative">
             <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-400 to-purple-600 rounded-2xl transform rotate-3 shadow-2xl"></div>
             <img
-              src={profile.url}
+              src={`${import.meta.env.BASE_URL}lazar_profile.jpg`}
               alt="Lazar Iliev"
               className="w-80 h-80 object-cover rounded-2xl shadow-2xl absolute top-0 left-1/2 transform -translate-x-1/2 -rotate-3"
             />
