@@ -5,8 +5,6 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // GitHub Pages serves the site under /<repo>/; Lovable and local dev use /
-  base: process.env.GITHUB_PAGES ? "/digital-persona-project-site/" : "/",
   server: {
     host: "::",
     port: 8080,
