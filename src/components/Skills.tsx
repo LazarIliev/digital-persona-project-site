@@ -1,33 +1,11 @@
-
 const Skills = () => {
   const skillCategories = [
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 95 },
-        { name: "Next.js", level: 85 }
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Python", level: 85 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "MongoDB", level: 75 }
-      ]
-    },
-    {
-      title: "Tools & Others",
-      skills: [
-        { name: "Git", level: 95 },
-        { name: "Docker", level: 80 },
-        { name: "AWS", level: 75 },
-        { name: "Figma", level: 90 }
-      ]
-    }
+    { title: "Languages & Frameworks", skills: ["Kotlin (coroutines)", "Java 17/21", "Spring Boot", "SQL"] },
+    { title: "Distributed Systems", skills: ["Event-driven architecture", "Kafka", "Microservices & API design", "Idempotency, outbox & CDC", "Sagas, retries & backpressure"] },
+    { title: "Payments & Fintech", skills: ["Transaction state machines", "Transfer & settlement logic", "Double-entry ledgers", "Double-spend protection", "Tokenised deposits, CBDC, Corda"] },
+    { title: "Data", skills: ["PostgreSQL", "Data modelling", "Hibernate", "Redis", "NoSQL"] },
+    { title: "Cloud & Operations", skills: ["Azure", "Docker & Kubernetes", "CI/CD & Gradle", "Prometheus & Grafana", "Distributed tracing"] },
+    { title: "AI", skills: ["LLM & agent orchestration", "Structured outputs", "MCP", "RAG", "AI-assisted engineering"] }
   ];
 
   return (
@@ -36,32 +14,26 @@ const Skills = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Skills & Expertise</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            The stack and practices I use to build correct, reliable backend systems
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{category.title}</h3>
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-gray-500">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className="bg-gradient-to-r from-blue-500 to-purple-600 h-2 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skillCategories.map((category) => (
+            <div key={category.title} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span key={skill} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">{skill}</span>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center text-gray-600">
+          <p><strong>Education:</strong> Software University (SoftUni) — Academy for Backend Engineers, 2017–2019</p>
+          <p><strong>Certifications & awards:</strong> AZ-900 Microsoft Azure Fundamentals · Barclays CBDC Hackathon, 4th place (London)</p>
         </div>
       </div>
     </section>

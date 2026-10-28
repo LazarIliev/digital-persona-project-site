@@ -45,8 +45,8 @@ const Contact = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's start a conversation</h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
               I'm always interested in hearing about new projects and opportunities. 
-              Whether you're a company looking to hire, or you're a fellow developer 
-              wanting to collaborate, I'd love to hear from you.
+              Whether you need a backend engineer for payments, distributed systems or AI integrations, or 
+              want to collaborate, I would love to hear from you.
             </p>
             
             <div className="space-y-4">
@@ -56,7 +56,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-gray-900 font-medium">Email</p>
-                  <p className="text-gray-600">alex@example.com</p>
+                  <p className="text-gray-600">lazar.iliev.it@gmail.com</p>
                 </div>
               </div>
               
@@ -66,7 +66,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-gray-900 font-medium">Phone</p>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600">+359 88 408 0478</p>
                 </div>
               </div>
               
@@ -76,7 +76,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-gray-900 font-medium">Location</p>
-                  <p className="text-gray-600">San Francisco, CA</p>
+                  <p className="text-gray-600">Sofia, Bulgaria</p>
                 </div>
               </div>
             </div>

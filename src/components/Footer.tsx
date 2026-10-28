@@ -7,10 +7,10 @@ const Footer = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">Alex Johnson</h3>
+            <h3 className="text-2xl font-bold mb-4">Lazar Iliev</h3>
             <p className="text-gray-400 leading-relaxed">
-              Full Stack Developer passionate about creating exceptional digital experiences 
-              through clean code and beautiful design.
+              Senior Backend Engineer building correct, reliable systems for fintech 
+              with Kotlin, Spring Boot and Kafka.
             </p>
           </div>
           
@@ -28,19 +28,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com" 
+                href="https://github.com/LazarIliev" 
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
               >
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://linkedin.com/in/lazar-iliev" 
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
               >
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:alex@example.com" 
+                href="mailto:lazar.iliev.it@gmail.com" 
                 className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors duration-300"
               >
                 <Mail size={20} />
@@ -51,7 +51,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center space-x-2">
-            <span>© 2024 Alex Johnson. Made with</span>
+            <span>© 2026 Lazar Iliev. Made with</span>
             <Heart className="w-4 h-4 text-red-500" />
             <span>and lots of coffee</span>
           </p>
