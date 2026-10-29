@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
+// Public by design; Web3Forms emails submissions to the address it was issued for.
+const WEB3FORMS_ACCESS_KEY = '0d5f7282-523c-405a-8af0-9de4c7ace3b1';//'346d515d-d4f9-42fc-9201-e2dd7f53ed69';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,16 +14,43 @@ const Contact = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simulate form submission
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    
-    setFormData({ name: '', email: '', message: '' });
+    setSending(true);
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `Portfolio message from ${formData.name}`,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.message || 'Request failed');
+      }
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch {
+      toast({
+        title: "Couldn't send message",
+        description: "Please try again or email me directly at lazar.iliev.it@gmail.com.",
+        variant: "destructive",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -134,7 +164,8 @@ const Contact = () => {
               
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group"
+                disabled={sending}
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 group disabled:opacity-60"
               >
                 <span>Send Message</span>
                 <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
