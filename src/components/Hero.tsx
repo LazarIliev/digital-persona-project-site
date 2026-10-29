@@ -17,7 +17,7 @@ const Hero = () => {
             Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Lazar Iliev</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
-            Senior Backend Engineer — Kotlin · Payments · Distributed Systems
+            Senior Backend Engineer — Kotlin/Java · Payments · Distributed Systems
           </p>
           <p className="text-lg text-gray-400 mb-12 max-w-xl">
             6+ years building reliable, production-grade backends for regulated fintech — ledgers, payments and AI-powered services

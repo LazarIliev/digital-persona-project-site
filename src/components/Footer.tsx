@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -51,9 +51,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center space-x-2">
-            <span>© 2026 Lazar Iliev. Made with</span>
-            <Heart className="w-4 h-4 text-red-500" />
-            <span>and lots of coffee</span>
+            <span>© 2026 Lazar Iliev</span>            
           </p>
         </div>
       </div>
